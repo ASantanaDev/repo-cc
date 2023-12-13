@@ -1,0 +1,10 @@
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.csproj.AssemblyReference.cache
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.Properties.Resources.resources
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.csproj.GenerateResource.cache
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.csproj.CoreCompileInputs.cache
+C:\Users\Anderson\RiderProjects\Pixel\bin\Debug\Pixel.exe.config
+C:\Users\Anderson\RiderProjects\Pixel\bin\Debug\Pixel.exe
+C:\Users\Anderson\RiderProjects\Pixel\bin\Debug\Pixel.pdb
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.exe
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.pdb
+C:\Users\Anderson\RiderProjects\Pixel\obj\Debug\Pixel.Form1.resources
