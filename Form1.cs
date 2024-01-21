@@ -76,20 +76,136 @@ namespace Pixel
                 }
             }
             
-            Segmento s5 = new Segmento();
-            s5.x0 = 0;
-            s5.y0 = 8.33;
-            s5.xf = 0;
-            s5.yf = -8.33;
-            s5.color0 = Color.Black;
+            Segmento sy = new Segmento();
+            sy.x0 = 0;
+            sy.y0 = 8.33;
+            sy.xf = 0;
+            sy.yf = -8.33;
+            sy.color0 = Color.Gray;
+            sy.Encender(lienzo);
+            
+            Segmento sx = new Segmento();
+            sx.x0 = -10;
+            sx.y0 = 0;
+            sx.xf = 10;
+            sx.yf = 0;
+            sx.color0 = Color.Gray;
+            sx.Encender(lienzo);
+            
+        }
+        
+        private void PintarEspacio()
+        {
+            Color fondo = Color.White;
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    lienzo.SetPixel(i, j, fondo);
+                }
+            }
+            
+            Segmento sy = new Segmento();
+            sy.x0 = 0;
+            sy.y0 = 8.33;
+            sy.xf = 0;
+            sy.yf = 0;
+            sy.color0 = Color.Gray;
+            sy.Encender(lienzo);
+            
+            Segmento sx = new Segmento();
+            sx.x0 = 0;
+            sx.y0 = 0;
+            sx.xf = 10;
+            sx.yf = 0;
+            sx.color0 = Color.Gray;
+            sx.Encender(lienzo);
+            
+            Segmento sz = new Segmento();
+            sz.x0 = -10;
+            sz.y0 = -8.33;
+            sz.xf = 0;
+            sz.yf = 0;
+            sz.color0 = Color.Gray;
+            sz.Encender(lienzo);
+            
+        }
+        
+        private void TrazarEspacio()
+        {
+            //Horizontal
+            Segmento sa = new Segmento();
+            sa.x0 = -10;
+            sa.y0 = -2.53;
+            sa.xf = 10;
+            sa.yf = -2.53;
+            sa.color0 = Color.DimGray;
+            sa.Encender(lienzo);
+            
+            Segmento sb = new Segmento();
+            sb.x0 = -10;
+            sb.y0 = -3.53;
+            sb.xf = 10;
+            sb.yf = -3.53;
+            sb.color0 = Color.DimGray;
+            sb.Encender(lienzo);
+            
+            Segmento sc = new Segmento();
+            sc.x0 = -10;
+            sc.y0 = -5.33;
+            sc.xf = 10;
+            sc.yf = -5.33;
+            sc.color0 = Color.DimGray;
+            sc.Encender(lienzo);
+            
+            //Derecha
+            Segmento s1 = new Segmento();
+            s1.x0 = 10;
+            s1.y0 = -8.33;
+            s1.xf = 6.518;
+            s1.yf = -2.53;
+            s1.color0 = Color.DimGray;
+            s1.Encender(lienzo);
+            
+            Segmento s2 = new Segmento();
+            s2.x0 = 5;
+            s2.y0 = -8.33;
+            s2.xf = 3.259;
+            s2.yf = -2.53;
+            s2.color0 = Color.DimGray;
+            s2.Encender(lienzo);
+            
+            Segmento s3 = new Segmento();
+            s3.x0 = 1.5;
+            s3.y0 = -8.33;
+            s3.xf = 0.978;
+            s3.yf = -2.53;
+            s3.color0 = Color.DimGray;
+            s3.Encender(lienzo);
+            
+            //Izquierda
+            Segmento s4 = new Segmento();
+            s4.x0 = -10;
+            s4.y0 = -8.33;
+            s4.xf = -6.518;
+            s4.yf = -2.53;
+            s4.color0 = Color.DimGray;
+            s4.Encender(lienzo);
+            
+           Segmento s5 = new Segmento();
+            s5.x0 = -5;
+            s5.y0 = -8.33;
+            s5.xf = -3.259;
+            s5.yf = -2.53;
+            s5.color0 = Color.DimGray;
             s5.Encender(lienzo);
             
             Segmento s6 = new Segmento();
-            s6.x0 = -10;
-            s6.y0 = 0;
-            s6.xf = 10;
-            s6.yf = 0;
-            s6.color0 = Color.Black;
+            s6.x0 = -1.5;
+            s6.y0 = -8.33;
+            s6.xf = -0.978;
+            s6.yf = -2.53;
+            s6.color0 = Color.DimGray;
             s6.Encender(lienzo);
             
         }
@@ -108,107 +224,6 @@ namespace Pixel
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             ApagarPixel();
-            pictureBox1.Image = lienzo;
-        }
-
-        private void btnSegmento_Click(object sender, EventArgs e)
-        {
-            PintarFondoEjes();
-            
-            Segmento segmento = new Segmento();
-            segmento.x0 = -10; segmento.y0 = -2;//punto 1
-            segmento.xf = 6; segmento.yf = 4;//punto 2
-            segmento.color0 = Color.Red;
-            segmento.Encender(lienzo);
-            
-            Segmento segmento1 = new Segmento();
-            segmento1.x0 = 6; segmento1.y0 = 4;//punto 1
-            segmento1.xf = 6; segmento1.yf = 0;//punto 2
-            segmento1.color0 = Color.Blue;
-            segmento1.Encender(lienzo);
-            
-            Segmento segmento2 = new Segmento();
-            segmento2.x0 = 6; segmento2.y0 = 0;//punto 1
-            segmento2.xf = 10; segmento2.yf = 5;//punto 2
-            segmento2.color0 = Color.Black;
-            segmento2.Encender(lienzo);
-            
-            Circunferencia c = new Circunferencia();
-            c.Radio = 3.0;
-            c.x0 = -2;
-            c.y0 = -1;
-            c.color0 = Color.Blue;
-            c.Encender(lienzo);
-            
-            Circunferencia c1 = new Circunferencia();
-            c1.Radio = 1.0;
-            c1.x0 = 6;
-            c1.y0 = 4;
-            c1.color0 = Color.Blue;
-            c1.Encender(lienzo);
-            
-            Circunferencia c2 = new Circunferencia();
-            c2.Radio = 0.2;
-            c2.x0 = -2;
-            c2.y0 = 1.5;
-            c2.color0 = Color.Blue;
-            c2.Encender(lienzo);
-            
-            pictureBox1.Image = lienzo;
-        }
-
-        private void btnCurvas_Click(object sender, EventArgs e)
-        {
-            PintarFondoEjes();
-            
-            /*CurvaV c0 = new CurvaV();
-            c0.tipo = 0;
-            c0.Radio = 2;
-            c0.x0 = 5;
-            c0.y0 = 3;
-            c0.color0 = Color.Blue;
-            c0.Encender(lienzo);
-            
-            CurvaV c1 = new CurvaV();
-            c1.tipo = 1;
-            c1.Radio = 2;
-            c1.x0 = 0;
-            c1.y0 = 0;
-            c1.color0 = Color.Firebrick;
-            c1.Encender(lienzo);
-            
-            CurvaV c2 = new CurvaV();
-            c2.tipo = 2;
-            c2.Radio = 2;
-            c2.x0 = -5;
-            c2.y0 = -3;
-            c2.color0 = Color.ForestGreen;
-            c2.Encender(lienzo);*/
-            
-            CurvaV c3A = new CurvaV();
-            c3A.tipo = 3;
-            c3A.Radio = 3.5;
-            c3A.x0 = 0;
-            c3A.y0 = 0;
-            c3A.color0 = Color.Firebrick;
-            c3A.Encender(lienzo);
-            
-            CurvaV c3B = new CurvaV();
-            c3B.tipo = 3;
-            c3B.Radio = 1;
-            c3B.x0 = 5;
-            c3B.y0 = 5;
-            c3B.color0 = Color.CadetBlue;
-            c3B.Encender(lienzo);
-            
-            CurvaV c3C = new CurvaV();
-            c3C.tipo = 3;
-            c3C.Radio = 1.5;
-            c3C.x0 = -5;
-            c3C.y0 = 5;
-            c3C.color0 = Color.BlueViolet;
-            c3C.Encender(lienzo);
-            
             pictureBox1.Image = lienzo;
         }
         
@@ -998,6 +1013,346 @@ namespace Pixel
             } while (t <= 8);
             
             pictureBox1.Image = lienzo;
+        }
+
+        private void examenParcialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PintarFondoEjes();
+            
+            Segmento s = new Segmento();
+            s.x0 = -1; s.y0 = 0;
+            s.xf = -6; s.yf = 8.33;
+            s.color0 = Color.Blue;
+            s.Encender(lienzo);
+            
+            Segmento s1 = new Segmento();
+            s1.x0 = -10; s1.y0 = 3.57;
+            s1.xf = -6; s1.yf = 8.33;
+            s1.color0 = Color.Red;
+            s1.Encender(lienzo);
+            
+            pictureBox1.Image = lienzo;
+            
+            Circunferencia c = new Circunferencia();
+            c.Radio = 0.2;
+            double t = 0;
+            do
+            {
+                c.x0 = (-1 /*s.x0*/ * (1 - t)) + (-6 /*s.xf*/ * t);
+                c.y0 = (0 /*s.y0*/  * (1 - t)) + (8.33 /*s.yf*/ * t);
+                c.color0 = Color.Blue;
+                c.Encender(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+                Thread.Sleep(100);
+                c.apagar(lienzo);
+                pictureBox1.Image = lienzo;
+                t += 0.2;
+            } while (t <= 1);
+            
+            t = 0;
+            do
+            {
+                c.x0 = (-6 /*s1.xf*/ * (1 - t)) + (-10 /*s1.x0*/  * t);
+                c.y0 = (8.33 /*s1.yf*/ * (1 - t)) + (3.57 /*s1.y0*/ * t);
+                c.color0 = Color.Red;
+                c.Encender(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+                Thread.Sleep(100);
+                c.apagar(lienzo);
+                pictureBox1.Image = lienzo;
+                t += 0.2;
+            } while (t <= 1);
+        }
+
+        private void axonometriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PintarEspacio();
+            
+            Vector3D obj = new Vector3D();
+            double t = 0;
+            obj.color0 = Color.Red;
+            
+            do
+            { 
+                obj.x0 = (t / 3) - 2;
+                obj.y0 = 1 + 3 * Math.Sin(t);
+                obj.z0 =  2 + 3 * Math.Cos(t);
+                    
+                obj.Encender(lienzo);
+                pictureBox1.Image = lienzo;
+                    
+                t = t + 0.001;
+                
+            } while (t <= 15);
+        }
+
+       //Cilindro
+        private void planoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //PintarEspacio();
+
+            Vector3D obj = new Vector3D();
+            double t = 0, dt = 0.1;
+            double h, dh;
+            obj.color0 = Color.Black;
+
+            do
+            {
+                h = 0;
+                dh = 0.2;
+                do
+                {
+                    obj.x0 = -4 + 2 * Math.Cos(t);
+                    obj.y0 = 1 + 3 * Math.Sin(t);
+                    obj.z0 = -2 + h / 3;
+                    
+                    obj.Encender(lienzo);
+                    pictureBox1.Image = lienzo;
+
+                    h = h + dh;
+                } while (h <= 9);
+
+                t = t + dt;
+            } while (t <= 6.3);
+        }
+
+        //Esfera
+        private void superficieVec1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //PintarEspacio();
+
+            Vector3D obj = new Vector3D();
+            double t = -1.75, dt = 0.1;
+            double h, dh;
+            double Rd = 1.7;
+            obj.color0 = Color.Black;
+
+            do
+            {
+                h = 0;
+                dh = 0.15;
+                do
+                {
+                    obj.x0 = 2 + (Rd * Math.Cos(t) * Math.Cos(h));
+                    obj.y0 = 2 + (Rd * Math.Cos(t) * Math.Sin(h));
+                    obj.z0 = 2 + (Rd * Math.Sin(t));
+                    
+                    obj.Encender(lienzo);
+                    pictureBox1.Image = lienzo;
+
+                    h = h + dh;
+                } while (h <= 6.3);
+
+                t = t + dt;
+            } while (t <= 1.75);
+        }
+
+        private void superficie3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PintarEspacio();
+
+            Vector3D obj = new Vector3D();
+            double t = -1.75, dt = 0.1;
+            double h, dh;
+            double Rd = 0.6;
+            obj.color0 = Color.Black;
+
+            do
+            {
+                h = 0;
+                dh = 0.07;
+                do
+                {
+                    obj.x0 = 3 + (Rd * (4 + Math.Cos(t)) * Math.Cos(h));
+                    obj.y0 = 3 + (Rd * (4 + Math.Cos(t)) * Math.Sin(h));
+                    obj.z0 = -3 + (Rd * Math.Sin(t));
+                    
+                    obj.Encender(lienzo);
+                    pictureBox1.Image = lienzo;
+
+                    h = h + dh;
+                } while (h <= 6.3);
+
+                t = t + dt;
+            } while (t <= 6.3);
+        }
+
+        private void parcial2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PintarFondoEjes();
+            
+            Segmento s = new Segmento();
+            s.x0 = -1; s.y0 = 0;
+            s.xf = -2; s.yf = -8.33;
+            s.color0 = Color.Blue;
+            s.Encender(lienzo);
+            
+            Segmento s1 = new Segmento();
+            s1.x0 = -4; s1.y0 = 8.33;
+            s1.xf = -2; s1.yf = -8.33;
+            s1.color0 = Color.Red;
+            s1.Encender(lienzo);
+            
+            pictureBox1.Image = lienzo;
+            
+            Circunferencia c = new Circunferencia();
+            c.Radio = 0.2;
+            double t = 0;
+            do
+            {
+                c.x0 = (-1 /*s.x0*/ * (1 - t)) + (-2 /*s.xf*/ * t);
+                c.y0 = (0 /*s.y0*/  * (1 - t)) + (-8.33 /*s.yf*/ * t);
+                c.color0 = Color.Blue;
+                c.Encender(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+                Thread.Sleep(100);
+                c.apagar(lienzo);
+                pictureBox1.Image = lienzo;
+                t += 0.2;
+            } while (t <= 1);
+            
+            t = 0;
+            do
+            {
+                c.x0 = (-2 /*s1.xf*/ * (1 - t)) + (-4 /*s1.x0*/  * t);
+                c.y0 = (-8.33 /*s1.yf*/ * (1 - t)) + (8.33 /*s1.y0*/ * t);
+                c.color0 = Color.Red;
+                c.Encender(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+                Thread.Sleep(100);
+                c.apagar(lienzo);
+                pictureBox1.Image = lienzo;
+                t += 0.2;
+            } while (t <= 1);
+        }
+
+
+        private void ondaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Animacion 
+            Onda o = new Onda();
+            double t = 0;
+            
+            do
+            {
+                o.v = 9.3;
+                o.w = 1.5;
+                o.GrafOnda(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+
+                t = t + 0.1;
+                o.t = t;
+            } while (t <= 2);
+            
+            //Estatico
+            /*
+            Onda o = new Onda();
+            double t = 0;
+            o.v = 9.3;
+            o.w = 1.5;
+            o.t = t;
+            o.GrafOnda(lienzo);
+            
+            pictureBox1.Image = lienzo;*/
+        }
+
+        private void interferenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Estatico
+            /*Onda ond = new Onda();
+            double t = 0;
+            ond.v = 9.3;
+            ond.w = 1.5;
+            ond.t = t;
+            ond.InterferenciaGraf(lienzo);
+            
+            pictureBox1.Image = lienzo;*/
+            
+            //Animacion
+            Onda ond = new Onda();
+            double t = 0;
+            ond.v = 9.3;
+            ond.w = 1.5;
+            ond.t = t;
+            
+            do
+            {
+                ond.v = 9.3;
+                ond.w = 1.5;
+                ond.InterferenciaGraf(lienzo);
+                pictureBox1.Image = lienzo;
+                pictureBox1.Refresh();
+
+                t = t + 0.1;
+                ond.t = t;
+            } while (t <= 2);
+
+        }
+
+
+        private void onda3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //TrazarEspacio();
+            
+            Onda o = new Onda();
+            double t = 0;
+            //Sin animacion
+            /*o.v = 9.3;
+            o.w = 2;
+            o.t = 0;
+            o.GrafOnda3D(lienzo);
+            pictureBox1.Image = lienzo;*/
+
+            //Animacion
+            do
+            {
+                o.v = 9.3;
+                o.w = 2;
+                o.t = t;
+                o.GrafOnda3D(lienzo);
+                pictureBox1.Image = lienzo;
+                Refresh();
+                //lienzo = null;
+                lienzo = new Bitmap(600, 500);
+                Thread.Sleep(5);
+                t = t + 0.01;
+            } while (t <= 4);
+        }
+
+        private void interferencia3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*//Estatico
+            TrazarEspacio();
+            
+            Onda o = new Onda();
+            double t = 0;
+            o.v = 9.3;
+            o.w = 2;
+            o.t = 0;
+            o.Interferencia3D(lienzo);
+            pictureBox1.Image = lienzo;*/
+            
+            //Animacion
+            Onda o = new Onda();
+            double t = 0;
+            do
+            {
+                o.v = 9.3;
+                o.w = 2;
+                o.t = t;
+                o.Interferencia3D(lienzo);
+                pictureBox1.Image = lienzo;
+                Refresh();
+                //lienzo = null;
+                lienzo = new Bitmap(600, 500);
+                Thread.Sleep(5);
+                t = t + 0.01;
+            } while (t <= 4); 
         }
     }
 }

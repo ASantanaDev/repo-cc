@@ -12,10 +12,14 @@ namespace Pixel
         public static int sx2  = 600 ;
         public static int sy1 = 0;
         public static int sy2  = 500;
-        public static double x1 = -2.5;
+        public static double x1 = -10;
+        public static double x2 = 10;
+        public static double y1 = -8.33;
+        public static double y2 = 8.33;
+        /*public static double x1 = -2.5;
         public static double x2 = 2.5;
         public static double y1 = -2.08;
-        public static double y2 = 2.08;
+        public static double y2 = 2.08;*/
         
         public Procesos() { }
  
